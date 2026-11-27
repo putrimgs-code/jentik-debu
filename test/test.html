@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Jentik Debu — Halaman Uji</title>
+  <link rel="stylesheet" href="test.css">
+  <!-- Sama seperti di situs meeting: pengait kamera dipasang sebelum kamera dibuka -->
+  <script src="../src/inject.js"></script>
+  <script src="../src/bridge.js"></script>
+</head>
+<body>
+  <main>
+    <div class="welcome glass" id="welcome" hidden>
+      <b>Ekstensi terpasang 🎉</b> Coba dulu di sini sebelum dipakai di meeting.
+    </div>
+    <p class="eyebrow">snap.engine // test bench</p>
+    <h1>Halaman uji Jentik Debu</h1>
+    <p class="lead">Video di bawah adalah apa yang <em>orang lain</em> lihat di meeting (dicerminkan seperti tampilan diri sendiri).</p>
+
+    <div class="stage glass">
+      <div class="screen">
+        <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+        <span class="rec">OUTPUT · CAM</span>
+        <video id="preview" autoplay playsinline muted></video>
+        <div class="placeholder" id="placeholder">
+          <button id="start" class="btn primary">Nyalakan kamera</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="capture" class="btn" disabled>1 · Rekam latar kosong</button>
+      <button id="snap" class="btn primary" disabled>2 · ✨ Jentik</button>
+      <button id="stop" class="btn" disabled>Matikan kamera</button>
+    </div>
+    <p class="hint" id="state">Kamera belum menyala.</p>
+
+    <section class="tips glass">
+      <h2>// supaya hasilnya rapi</h2>
+      <ul>
+        <li>Kamera harus diam. Kalau digeser, rekam ulang latar kosong.</li>
+        <li>Cahaya ruangan sebaiknya tetap. Lampu menyala/mati membuat latar "bocor".</li>
+        <li>Baju yang warnanya kontras dengan dinding membuat badan terpisah lebih bersih.</li>
+        <li>Jentikkan jari cukup dekat ke mikrofon (± 50 cm). Ketikan keras atau tepukan tangan kadang ikut memicu; atur sensitivitas di popup.</li>
+      </ul>
+    </section>
+  </main>
+  <script src="test.js"></script>
+</body>
+</html>

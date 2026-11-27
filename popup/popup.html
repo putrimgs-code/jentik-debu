@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Jentik Debu</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span></div>
+
+  <header class="glass">
+    <div class="logo"><img src="../icons/icon48.png" alt="" width="34" height="34"></div>
+    <div class="title">
+      <h1>Jentik Debu</h1>
+      <p class="mono sub">snap.engine <span class="ver">v1.0</span></p>
+    </div>
+    <label class="switch" title="Aktifkan ekstensi">
+      <input type="checkbox" id="enabled">
+      <span></span>
+    </label>
+  </header>
+
+  <section class="glass status" id="status">
+    <p class="mono label">// status</p>
+    <div class="row"><span class="dot" id="camDot"></span><span id="camText">Memeriksa kamera…</span></div>
+    <div class="row"><span class="dot" id="plateDot"></span><span id="plateText">—</span></div>
+  </section>
+
+  <section class="steps">
+    <div class="glass step">
+      <span class="num mono">01</span>
+      <div class="body">
+        <b>Rekam latar kosong</b>
+        <p>Setelah tombol ditekan, kamu punya 5 detik untuk keluar dari frame kamera. Kamera jangan digeser.</p>
+        <button id="capture" class="btn">Rekam latar</button>
+      </div>
+    </div>
+    <div class="glass step">
+      <span class="num mono">02</span>
+      <div class="body">
+        <b>Jentikkan jari di dekat mikrofon</b>
+        <p>Atau tekan <kbd id="shortcut">Alt+Shift+S</kbd>. Jentikan sekali lagi untuk muncul kembali.</p>
+        <button id="snap" class="btn primary">✨ Jentik sekarang</button>
+      </div>
+    </div>
+  </section>
+
+  <details class="glass">
+    <summary><span class="mono label">// pengaturan</span></summary>
+    <label class="check"><input type="checkbox" id="soundSnap"> Deteksi suara jentikan jari</label>
+    <label class="range">
+      <span>Sensitivitas jentikan <output id="sensitivityOut" class="mono"></output></span>
+      <input type="range" id="sensitivity" min="0" max="1" step="0.05">
+      <small>Naikkan kalau jentikanmu tidak terdeteksi, turunkan kalau ketikan atau tepukan ikut memicu.</small>
+    </label>
+    <label class="range">
+      <span>Pemisah badan & latar <output id="maskThresholdOut" class="mono"></output></span>
+      <input type="range" id="maskThreshold" min="0.04" max="0.3" step="0.01">
+      <small>Turunkan kalau sebagian badan masih tertinggal saat hilang. Naikkan kalau latar ikut "bocor".</small>
+    </label>
+    <label class="range">
+      <span>Durasi efek <output id="durationOut" class="mono"></output></span>
+      <input type="range" id="duration" min="1.5" max="6" step="0.5">
+    </label>
+    <label class="select">
+      <span>Muncul kembali</span>
+      <select id="autoReturn">
+        <option value="0">Saat aku jentik lagi</option>
+        <option value="5">Otomatis setelah 5 detik</option>
+        <option value="10">Otomatis setelah 10 detik</option>
+        <option value="30">Otomatis setelah 30 detik</option>
+      </select>
+    </label>
+    <div class="links">
+      <a href="#" id="openShortcuts">Ganti pintasan keyboard</a>
+      <a href="#" id="clearPlate">Hapus latar tersimpan</a>
+    </div>
+  </details>
+
+  <footer>
+    <a href="#" id="openTest">Buka halaman uji kamera →</a>
+    <small>Nyalakan ulang kamera di meeting setelah mengubah tombol aktif.</small>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
